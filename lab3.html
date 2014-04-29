@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<h1>My Library</h1>
+
+<script>
+
+//Factory Functions are considered class functions in programming and require a capital letter
+//Here is our constructor function with four members: three properties, one method
+function Book(title, author, pubDate)
+{
+    this.title = title;
+    this.author = author;
+    this.pubDate = pubDate;
+    this.goPage = function() {
+        //Displays requested page
+    }
+    this.displayBook = function() {
+        var bookTitle = document.createElement("p");
+        bookTitle.innerHTML = this.title;
+        document.body.appendChild(bookTitle);
+
+        var bookAuthor = document.createElement("p");
+        bookAuthor.innerHTML = this.author;
+        document.body.appendChild(bookAuthor);
+
+        var bookPubDate = document.createElement("p");
+        bookPubDate.innerHTML = this.pubDate;
+        document.body.appendChild(bookPubDate);
+    }
+}
+
+//Generate book
+var scriptin = new Book("Scriptin With JS", "Wykes", "2010");
+//Call function to display
+scriptin.displayBook();
+
+var myBook = new Book("My Chic Guide", "Carter", "2014")
+myBook.displayBook();
+
+//Enhance with Car Factory JS to make an interactive library generator! 
+
+</script>
+</body>
+</html>
